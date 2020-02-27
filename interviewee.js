@@ -120,7 +120,9 @@ window.onload = function() {
             if (to_call == 1){
                 document.getElementById("myAudio").play();
                 document.getElementById("myAudio").onended = function(){
-                    responsiveVoice.speak(company_name + " calling " + applicant_info)
+                    var message = company_name + " calling " + applicant_info;
+                    console.log(message);
+                    responsiveVoice.speak(message);
                 }
                 db.ref('MESA/'+company_name+'/call').set(0);
             }
